@@ -1,6 +1,6 @@
-import Form from '../lib/form/form'
-import Input from '../lib/form/input';
-import './formPage.css'
+import Form from '../lib/Form'
+import Input from '../lib/Input';
+import '../styles/formPage.css'
 
 export default function FormPage(){
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Form from '../lib/form/form'
+import Form from '../lib/Form'
 import Swal from 'sweetalert2'
 
 export default function LoadFile() {
@@ -18,7 +18,7 @@ export default function LoadFile() {
             //metemos cada linea en un array y el array lo divimos con el \t 
             extraccion.push(arrayDelTexto[i].split('\t'));
             //nos salteamos el cabezal
-            if (i>=0){
+            if (i>0){
             //eliminamos lineas vacias
             if (extraccion[i][0] === ''){
                 Swal.fire({
@@ -49,7 +49,7 @@ export default function LoadFile() {
                             'Authorization': 'Bearer 123456'
                         },
                     body:JSON.stringify(data)}
-                    const url = 'http://172.18.6.74:3000/api/v1/items'
+                    const url = 'http://172.18.6.74:3001/api/v1/items'
                     const envio = await fetch(url,options)
                     const result = await envio.json()
                     console.log(result)

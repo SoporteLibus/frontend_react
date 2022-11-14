@@ -1,4 +1,4 @@
-import "../../components/formPage.css"
+import "../styles/formPage.css"
 
 export default function Form(prop) {
     return (

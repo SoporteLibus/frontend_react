@@ -1,16 +1,15 @@
 import './App.css';
-import LoadFile from './components/loadFile';
-import Nav from './components/navBar';
+import React from "react";
+import Home from './components/Home'
 
 // import Select from './components/form/select';
 
 function App() {
-  return (
+    return (
         <div>
-          <Nav />
-          <LoadFile />
+            <Home />
         </div>
-  );
+    );
 }
 
 export default App;
