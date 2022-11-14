@@ -87,13 +87,6 @@ nav{
   padding-right: 20px;
 }
 
-.burger {
-  border: none;
-  width: 5rem;
-  background-color: transparent;
-  outline: none;
-}
-
 .burger .line{
   display: block;
   width: 3em;
