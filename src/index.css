@@ -51,6 +51,10 @@ html{
   .container{
       grid-template-columns: repeat(3, auto);
   }
+  textarea {
+      min-width: 100%;
+      min-height: 30rem;
+  }
 }
 
 @media screen  and (max-width:1020px){
@@ -70,7 +74,7 @@ html{
       position: absolute;
       right: 0em;
       height: 800px;
-      top: 9vh;
+      top: 12vh;
       background-color: var(--color-gris);
       flex-direction: column;
       align-items: center;
@@ -107,9 +111,6 @@ html{
   }
   .center{
       grid-template-columns: repeat(2, auto);
-  }
-  .div-form form .div-group{
-      grid-template-columns: 1fr 1fr;
   }
   table{
       border: 0;
@@ -148,9 +149,6 @@ html{
   .container{
       grid-template-columns: 1fr;
   }
-  .div-form form .div-group{
-      grid-template-columns: 1fr;
-  }
 }
 
 @media(max-width:667px) {
@@ -162,9 +160,6 @@ html{
 @media(max-width:576px) {
   .init{
     font-size: 6px;
-  }
-  .div-form form .div-group{
-      grid-template-columns: 1fr;
   }
 }
 

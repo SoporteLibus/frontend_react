@@ -11,7 +11,7 @@ export default function CardMachine(prop){
             <div className="container1">
                 <div className="button-div">
                 <Link to="/formpage"><AiOutlineForm /></Link>
-                <Link to="/search"><FcDataSheet /></Link>
+                <Link to="/listpage"><FcDataSheet /></Link>
                 </div>
             </div>
         </div>

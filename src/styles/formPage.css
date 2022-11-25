@@ -20,22 +20,11 @@ h1 {
   
   .div-form {
     background: var(--color-azul); 
-    margin: 0 50px;
+    margin: 0 2em;
     padding: 2em;
     border-radius: 1em;
     box-sizing: border-box;
     font-family: var(--letra-nav);
-  }
-  
-  .div-form form .div-group{
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .div-form form .div-group-block{
-    display: block;
   }
 
   .div-form form{
@@ -104,8 +93,4 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  textarea {
-    resize: none;
   }

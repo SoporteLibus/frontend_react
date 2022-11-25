@@ -9,6 +9,7 @@ import Bmb from './components/Bmb';
 import Login from './components/Login';
 import Search from './components/Search';
 import FormPage from './components/FormPage';
+import ListPage from './components/ListPage';
 import LoadFile from './components/LoadFile';
 import Back from './components/Back';
 import Footer from './components/Footer';
@@ -30,6 +31,7 @@ root.render(
       <Route path='/search' element={<Search />} />
       <Route path='/formpage' element={<FormPage />} />
       <Route path='/loadfile' element={<LoadFile />} />
+      <Route path='/listpage' element={<ListPage />} />
       <Route path='*' element={<Error />} />
     </Routes>
     <Footer />
