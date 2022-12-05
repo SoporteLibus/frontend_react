@@ -50,7 +50,7 @@ export default function LoadFile() {
                                 },
                                 body: JSON.stringify(data)
                             }
-                            const url = 'http://172.18.6.136:3001/api/v1/items'
+                            const url = 'http://172.18.6.143:3000/api/v1/items'
                             const envio = await fetch(url, options)
                             const result = await envio.json()
                             console.log(result)

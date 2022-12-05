@@ -12,7 +12,7 @@ const ListPage = () => {
         setLoading(false)
     })
     }, [])
-    const results = searchResults && searchResults.map(post => <Post key={post._id} post={post}/>);
+    const results = searchResults && searchResults.map(post => <Post key={post.data._id} post={post.data}/>);
     const content = results ? results : <article><p>No Matching Posts</p></article>
     
    const cargarElementos = async ()=>{
