@@ -17,11 +17,12 @@ export default function Search() {
     })
     }, [])
 
+
     const results = searchResults && searchResults.map(post => <Post key={post._id} post={post} />);
     const content = results ? results : <article><p>No Matching Posts</p></article>
+    console.log(results)
     if (loading) return <h1>LOADING...</h1>
-    console.log("POST>>>",posts)
-    console.log("SEARCH>>>",searchResults)
+   
     return (
         <div className="main-container">
             <div className="div-fecha">

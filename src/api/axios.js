@@ -5,8 +5,18 @@ export const api = axios.create({
 })
 
 const getPosts = async () => {
-    const response = await api.get('/items')
+    const response = await api.get('/items',{
+        headers:{
+            'Authorization':await localStorage.getItem('token')
+        }
+    })
+    
     return response.data
 }
 
-export default getPosts;
+const login= async()=>{
+    const response=await api.post('/auth/login')
+    return response.data
+}
+
+export default getPosts

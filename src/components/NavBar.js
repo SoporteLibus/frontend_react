@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useRef, useState } from 'react';
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 // Componente del boton del NavBar
 export const MobileIcon = styled.button`
   display: none;
@@ -19,6 +20,12 @@ export default function Nav(){
     // Usado para desplegar el panel derecho en la version mobile
     const burgerRef = useRef();
     const navRef = useRef();
+    const navigate=useNavigate();
+    
+    const logout=()=>{
+        localStorage.clear();
+        navigate('/v1/app/login')
+    }
     const setBurger = () => {
         burgerRef.current.classList.toggle("active");
         navRef.current.classList.toggle("nav-active");
@@ -34,20 +41,36 @@ export default function Nav(){
     });
     // Comprobacion del estado del boton del NavBar
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+  
+    const auth=localStorage.getItem('token')
+       
+     
     return (
         <div>
         <nav>
         <div className="logo">
-            <Link to="/"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
+            <Link to="/app/v1"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
             <h4>Argul y Cia</h4>
         </div>
         <ul className="navlinks" ref={navRef} >
-            <li>
-                <Link to="/info">Info</Link>
-            </li>
-            <li>
-                <Link to="/inyectoras">Inyectoras</Link>
-            </li>
+           
+           
+            {/* FUNCION LOGIN */}
+            {auth ? 
+            <>
+             
+            <li><Link to="/app/v1/configuracion">Opciones</Link></li>
+            <li><Link to="app/v1/generadores">Generadores</Link></li>
+            <li><Link onClick={logout} to="/app/v1/login">Salir</Link></li>
+            </>     
+            :
+            <>           
+            <li><Link  to="/app/v1/login">Ingresar</Link></li>
+            <li><Link to="/app/v1/register">Registrarse</Link></li>
+            </>  
+            }
+            
+            
         </ul>
         <MobileIcon ref={burgerRef} className="burger" onClick={() => {
             setShowMobileMenu(!showMobileMenu)

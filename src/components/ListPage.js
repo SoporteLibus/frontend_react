@@ -12,11 +12,13 @@ const ListPage = () => {
         setLoading(false)
     })
     }, [])
-    const results = searchResults && searchResults.map(post => <Post key={post.data._id} post={post.data}/>);
+
+    const results = searchResults.data && searchResults.data.map(post => <Post key={post._id} post={post}/>);
+    console.log(searchResults)
     const content = results ? results : <article><p>No Matching Posts</p></article>
     
    const cargarElementos = async ()=>{
-    
+
    try{
     let Myelement1 = await document.forms['formulario']['numero_de_operacion']
     Myelement1.setAttribute('value', searchResults[0].numero_de_operacion);

@@ -1,5 +1,6 @@
 const SearchBar = ({ posts, setSearchResults }) => {
     const handleSubmit = (e) => e.preventDefault()
+
     const handleSearchChange = (e) => {
         
         if (!e.target.value) return setSearchResults(posts)
@@ -18,8 +19,9 @@ const SearchBar = ({ posts, setSearchResults }) => {
                     post.materia_prima.includes(e.target.value))
 
         setSearchResults(resultsArray) 
+        console.log(resultsArray)
     }
-
+        
     return (
         <header>
             <br/>
