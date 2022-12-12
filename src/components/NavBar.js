@@ -64,8 +64,10 @@ export default function Nav(){
             {/* FUNCION LOGIN */}
             {auth ? 
             <>
-            <li><Link to="/app/v1/configuracion">Opciones</Link></li>
             <li><Link to="app/v1/generadores">Generadores</Link></li>
+            <li><Link to="app/v1/">Inyectoras</Link></li>
+            <li><Link to="/app/v1/configuracion">Opciones</Link></li>
+            
             <li><Link onClick={logout} to="/app/v1/login">Salir </Link></li>
             </>     
             :

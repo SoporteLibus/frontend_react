@@ -24,24 +24,25 @@ function App() {
         <div>
             <Nav />
             <Back />
-            {!auth ?  
+            {auth ?  
             <Routes>
-                <Route path='/' element={<Navigate to='/app/v1/login' replace />}/>
+                <Route path='/' element={<Navigate to='/app/v1/' replace />}/>
                 <Route path='app/v1/' element={<Home  />} />
                 <Route path='app/v1/milacron' element={<Milacron />} />
                 <Route path='app/v1/arburg' element={<Arburg />} />
                 <Route path='app/v1/bmb' element={<Bmb />} />
-                <Route path='app/v1/login' element={<Login />} />
                 <Route path='app/v1/search' element={<Search />} />
                 <Route path='app/v1/formpage' element={<FormPage />} />
                 <Route path='app/v1/loadfile' element={<LoadFile />} />
                 <Route path='app/v1/listpage' element={<ListPage />} />
-                <Route path='app/v1/register' element={<Register/>} />
-                <Route path='*' element={<Error />} />
+                {/* <Route path='*' element={<Error />} /> */}
             </Routes>
             :
             <Routes>
                 <Route path='*' element={<Error />} />
+                <Route path='app/v1/login' element={<Login />} />
+                <Route path='app/v1/register' element={<Register/>} />
+                <Route path='/' element={<Navigate to='/app/v1/login' replace />}/>
             </Routes>
             }
            
