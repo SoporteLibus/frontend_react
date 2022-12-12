@@ -48,20 +48,25 @@ export default function Nav(){
     return (
         <div>
         <nav>
+        {auth ?
         <div className="logo">
             <Link to="/app/v1"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
             <h4>Argul y Cia</h4>
         </div>
+        :
+        <div className="logo">
+            <Link to="/app/v1/login"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
+            <h4>Argul y Cia</h4>
+        </div>
+        }
         <ul className="navlinks" ref={navRef} >
-           
            
             {/* FUNCION LOGIN */}
             {auth ? 
             <>
-             
             <li><Link to="/app/v1/configuracion">Opciones</Link></li>
             <li><Link to="app/v1/generadores">Generadores</Link></li>
-            <li><Link onClick={logout} to="/app/v1/login">Salir</Link></li>
+            <li><Link onClick={logout} to="/app/v1/login">Salir </Link></li>
             </>     
             :
             <>           
@@ -69,8 +74,7 @@ export default function Nav(){
             <li><Link to="/app/v1/register">Registrarse</Link></li>
             </>  
             }
-            
-            
+           
         </ul>
         <MobileIcon ref={burgerRef} className="burger" onClick={() => {
             setShowMobileMenu(!showMobileMenu)

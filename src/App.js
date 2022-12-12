@@ -19,10 +19,12 @@ import Register from './components/register';
 
 function App() {
     
+    const auth=localStorage.getItem('token')
     return (
         <div>
             <Nav />
             <Back />
+            {!auth ?  
             <Routes>
                 <Route path='app/v1/' element={<Home  />} />
                 <Route path='app/v1/milacron' element={<Milacron />} />
@@ -36,6 +38,12 @@ function App() {
                 <Route path='app/v1/register' element={<Register/>} />
                 <Route path='*' element={<Error />} />
             </Routes>
+            :
+            <Routes>
+                <Route path='*' element={<Error />} />
+            </Routes>
+            }
+           
             <Footer />
         </div>
     );
