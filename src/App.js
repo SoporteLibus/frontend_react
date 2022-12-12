@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
 import Home from './components/Home'
-import {Route, Routes } from 'react-router-dom';
+import {Navigate, Route, Routes } from 'react-router-dom';
 import Milacron from './components/Milacron';
 import Arburg from './components/Arburg';
 import Bmb from './components/Bmb';
@@ -26,6 +26,7 @@ function App() {
             <Back />
             {!auth ?  
             <Routes>
+                <Route path='/' element={<Navigate to='/app/v1/login' replace />}/>
                 <Route path='app/v1/' element={<Home  />} />
                 <Route path='app/v1/milacron' element={<Milacron />} />
                 <Route path='app/v1/arburg' element={<Arburg />} />
