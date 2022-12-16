@@ -4,7 +4,7 @@ import '../styles/404.css'
 export default function Error(){
     return (
         <div className="init">
-            <p>A donde vas salame??!!</p>
+            <p>404 Not found</p>
            
         </div>
     )

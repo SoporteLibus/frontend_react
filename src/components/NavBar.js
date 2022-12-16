@@ -50,12 +50,12 @@ export default function Nav(){
         <nav>
         {auth ?
         <div className="logo">
-            <Link to="/app/v1"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
+            <Link to="/app/v1/"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
             <h4>Argul y Cia</h4>
         </div>
         :
         <div className="logo">
-            <Link to="/app/v1/login"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
+            <Link to="/app/v1/login/"><img src="/images/logo2.png" alt="Logo Argul" /></Link>
             <h4>Argul y Cia</h4>
         </div>
         }
@@ -64,16 +64,16 @@ export default function Nav(){
             {/* FUNCION LOGIN */}
             {auth ? 
             <>
-            <li><Link to="app/v1/generadores">Generadores</Link></li>
+            <li><Link to="app/v1/generadores/">Generadores</Link></li>
             <li><Link to="app/v1/">Inyectoras</Link></li>
-            <li><Link to="/app/v1/configuracion">Opciones</Link></li>
-            
+            <li><Link to="/app/v1/configuracion/">Opciones</Link></li>
+            <li><Link to="/app/v1/loadfile">Cargar ordenes</Link></li>
             <li><Link onClick={logout} to="/app/v1/login">Salir </Link></li>
             </>     
             :
             <>           
-            <li><Link  to="/app/v1/login">Ingresar</Link></li>
-            <li><Link to="/app/v1/register">Registrarse</Link></li>
+            <li><Link  to="/app/v1/login/">Ingresar</Link></li>
+            <li><Link to="/app/v1/register/">Registrarse</Link></li>
             </>  
             }
            

@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
 import Home from './components/Home'
-import {Navigate, Route, Routes } from 'react-router-dom';
+import {Navigate, redirect, Route, Routes } from 'react-router-dom';
 import Milacron from './components/Milacron';
 import Arburg from './components/Arburg';
 import Bmb from './components/Bmb';
@@ -15,7 +15,8 @@ import Footer from './components/Footer';
 import Nav from './components/NavBar';
 import Error from './components/404';
 import Register from './components/register';
-
+import { ProtectedRoute } from './components/protectedRoute';
+import Welcome from './components/confirm'
 
 function App() {
     
@@ -24,27 +25,50 @@ function App() {
         <div>
             <Nav />
             <Back />
-            {auth ?  
-            <Routes>
-                <Route path='/' element={<Navigate to='/app/v1/' replace />}/>
-                <Route path='app/v1/' element={<Home  />} />
-                <Route path='app/v1/milacron' element={<Milacron />} />
-                <Route path='app/v1/arburg' element={<Arburg />} />
-                <Route path='app/v1/bmb' element={<Bmb />} />
-                <Route path='app/v1/search' element={<Search />} />
-                <Route path='app/v1/formpage' element={<FormPage />} />
-                <Route path='app/v1/loadfile' element={<LoadFile />} />
-                <Route path='app/v1/listpage' element={<ListPage />} />
-                {/* <Route path='*' element={<Error />} /> */}
-            </Routes>
-            :
-            <Routes>
-                <Route path='*' element={<Error />} />
-                <Route path='app/v1/login' element={<Login />} />
-                <Route path='app/v1/register' element={<Register/>} />
-                <Route path='/' element={<Navigate to='/app/v1/login' replace />}/>
-            </Routes>
-            }
+                <Routes >
+                {!auth ?  
+                <Route path='/' element={<Navigate to='/app/v1/login/' replace />}/> 
+                    :
+                <Route path='/' element={<Navigate to='/app/v1/' replace />}/>}
+
+                <Route path='app/v1/login/' element={<Login />} />
+                <Route path='app/v1/register/' element={<Register/>} />
+                <Route path="app/v1/welcome/" element={<Welcome />} />
+                <Route path='app/v1/' element={
+                <ProtectedRoute>
+                    <Home/>
+                </ProtectedRoute>}/>
+                <Route path='app/v1/milacron/' element={
+                <ProtectedRoute>
+                    <Milacron />
+                </ProtectedRoute>} />
+                <Route path='app/v1/arburg/' element={
+                <ProtectedRoute>
+                    <Arburg />
+                </ProtectedRoute>} />
+                <Route path='app/v1/bmb/' element={
+                <ProtectedRoute>
+                    <Bmb />
+                </ProtectedRoute>} />
+                <Route path='app/v1/search' element={
+                <ProtectedRoute>
+                    <Search />
+                </ProtectedRoute>} />
+                <Route path='app/v1/formpage' element={
+                <ProtectedRoute>
+                    <FormPage />
+                </ProtectedRoute>} />
+                <Route path='app/v1/loadfile' element={
+                <ProtectedRoute>
+                    <LoadFile />
+                </ProtectedRoute>} />
+                <Route path='app/v1/listpage' element={
+                <ProtectedRoute>
+                    <ListPage />
+                </ProtectedRoute>} />
+                <Route path='*' element={<Error/>}/>
+         </Routes>
+           
            
             <Footer />
         </div>

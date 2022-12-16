@@ -22,8 +22,8 @@ export default function Login(){
 
             if(result){
                 localStorage.setItem('token',result)
-                navigate("/app/v1")
-                alert('se registrto con exito')
+                navigate("/app/v1/")
+                
             }else{
                 alert('ingrese un usuario valido')
             }

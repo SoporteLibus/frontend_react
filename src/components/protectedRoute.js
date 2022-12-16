@@ -1,13 +1,11 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-export const ProtectedRoute = ({
-  isAllowed,
-  redirectTo = "/app/v1/login",
-  children,
-}) => {
-  if (!isAllowed) {
-    return <Navigate to={redirectTo} replace />;
+
+export const ProtectedRoute = ({ children }) => {
+  const auth=localStorage.getItem('token')
+  if (!auth) {
+  
+    return <Navigate to="/app/v1/login" />;
   }
-
-  return children ? children : <Outlet />;
+  return children;
 };
