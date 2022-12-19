@@ -24,15 +24,16 @@ function App() {
     return (
         <div>
             <Nav />
-            <Back />
+            {/* <Back /> */}
                 <Routes >
                 {!auth ?  
                 <Route path='/' element={<Navigate to='/app/v1/login/' replace />}/> 
                     :
                 <Route path='/' element={<Navigate to='/app/v1/' replace />}/>}
-
-                <Route path='app/v1/login/' element={<Login />} />
+                <Route path='app/v1/login/' element={<Login/>} />
+               
                 <Route path='app/v1/register/' element={<Register/>} />
+                
                 <Route path="app/v1/welcome/" element={<Welcome />} />
                 <Route path='app/v1/' element={
                 <ProtectedRoute>

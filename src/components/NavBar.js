@@ -43,7 +43,10 @@ export default function Nav(){
     const [showMobileMenu, setShowMobileMenu] = useState(false)
   
     const auth=localStorage.getItem('token')
-       
+    const data=localStorage.getItem('data') 
+
+    
+    console.log(JSON.parse(data))
      
     return (
         <div>
@@ -66,8 +69,20 @@ export default function Nav(){
             <>
             <li><Link to="app/v1/generadores/">Generadores</Link></li>
             <li><Link to="app/v1/">Inyectoras</Link></li>
-            <li><Link to="/app/v1/configuracion/">Opciones</Link></li>
+            
             <li><Link to="/app/v1/loadfile">Cargar ordenes</Link></li>
+            <li>
+               
+                <img 
+                Style="float:right;" src="photo/avatar/img_avatar.png" alt="Avatar" 
+                className="avatar"
+                />
+                
+                <Link to="/app/v1/configuracion/"/>
+
+                </li>
+            
+            
             <li><Link onClick={logout} to="/app/v1/login">Salir </Link></li>
             </>     
             :

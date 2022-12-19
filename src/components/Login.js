@@ -13,15 +13,17 @@ export default function Login(){
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            const resp=await axios.post('http://localhost:3000/api/v1/auth/login', {
+            const resp=await axios.post('http://172.18.6.143:3000/api/v1/auth/login', {
                 email: email,
                 password: password
             });
             
-            const result =resp.data.tokenSession
 
+            const result =resp.data.tokenSession
+            const data=resp.data
             if(result){
                 localStorage.setItem('token',result)
+                localStorage.setItem('data',JSON.stringify(data))
                 navigate("/app/v1/")
                 
             }else{
