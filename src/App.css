@@ -107,6 +107,10 @@ nav{
 .burger.active .line:nth-child(3){
   transform: rotate(-45deg) translateY(-0.7em);
 }
+
+.avatar{
+  float: right;
+}
 /*-- /nav --*/
 
 /*-- Footer --*/

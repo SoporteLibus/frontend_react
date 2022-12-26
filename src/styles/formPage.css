@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     margin: 0;
     color: var(--color-blanco-solido);
     text-align: center;
@@ -6,7 +6,7 @@ h1 {
     font-weight: 500;
     letter-spacing: 2px;
     padding: 5em 0;
-  }
+  } */
   
   h2 {
     margin: 0;
@@ -25,6 +25,7 @@ h1 {
     border-radius: 1em;
     box-sizing: border-box;
     font-family: var(--letra-nav);
+    margin-bottom: 2em;
   }
 
   .div-form form{
@@ -38,8 +39,8 @@ h1 {
   }
   
   .form-group {
-    margin: 10px 10px;
-    width: 90%;
+    margin: 10px;
+    min-width: 30em;
   }
   
   .form-group label {
@@ -73,7 +74,7 @@ h1 {
     padding: 15px 5px;
   }
   
-  .guardar {
+  .button-submit {
     background: var(--color-gris-fuerte);
     color: var(--color-blanco-solido);
     font-size: 1.3em;
@@ -91,4 +92,34 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  form .div-enviar {
+    background-color: var(--color-azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2em;
+    padding: 2em;
+    border-radius: 1em;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+  }
+
+  .div-block{
+    border-radius: 10px;
+  }
+
+  .div-block-title{
+    color: var(--color-gris-fuerte);
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+  }
+
+  .div-block-content{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }

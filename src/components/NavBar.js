@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useRef, useState } from 'react';
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+
 // Componente del boton del NavBar
 export const MobileIcon = styled.button`
   display: none;
@@ -45,7 +46,6 @@ export default function Nav(){
     const data=localStorage.getItem('data') 
 
     
-    console.log(JSON.parse(data))
      
     return (
         <div>
@@ -73,13 +73,13 @@ export default function Nav(){
             <li>
                
                 <img 
-                Style="float:right;" src="photo/avatar/img_avatar.png" alt="Avatar" 
+                src="photo/avatar/img_avatar.png" alt="Avatar" 
                 className="avatar"
                 />
                 
                 <Link to="/app/v1/configuracion/"/>
 
-                </li>
+            </li>
             
             
             <li><Link onClick={logout} to="/app/v1/login">Salir </Link></li>
