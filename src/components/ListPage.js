@@ -6,38 +6,28 @@ import SearchBar from '../components/SearchBar'
 import styled from "styled-components";
 import Form from '../lib/Form'
 import Input from '../lib/Input';
+import Input5 from '../lib/Input5';
 
 export const MobileForm = styled.div`
     justify-content: center;
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    @media screen and (max-width: 800px) {
-        grid-template-columns: 1fr;
-    }
 `;
 
 const ListPage = () => {
     const [posts, setPosts] = useState([])
     const [searchResults, setSearchResults] = useState([])
-    const [loading,setLoading]=useState(true)
-    let content;
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getPosts().then(json => {
-        setPosts(json)
-        setSearchResults(json)
-        setLoading(false)
-    })
+            setPosts(json)
+            setSearchResults(json)
+            setLoading(false)
+        })
     }, [])
 
     const results = searchResults && searchResults.map(post => <Post key={post._id} post={post}/>);
-    console.log("LISTPAGE>>",searchResults)
-    if (searchResults[60] || !searchResults[1]) {
-        content = <tr><td><article><p>No Matching Posts</p></article></td></tr>
-    } else {
-        content = results
-    }
 
    const cargarElementos = async ()=>{
 
@@ -74,46 +64,51 @@ if (loading) return <h1>LOADING...</h1>
             <div className="div-fecha">
                 <SearchBar posts={posts} setSearchResults={setSearchResults} />
             </div>
-            <table className="table-cls">
-                <thead>
-                        <tr>
-                            <th>Numero de operacion</th>
-                            <th>Codigo del producto</th>
-                            <th>Numero de Inyectora</th>
-                            <th>Numero de Molde</th>
-                            <th>Tiempo de ciclo</th>
-                            <th>Materia Prima</th>
-                        </tr>
-                </thead>
-                <tbody>
-                    {content}
-                </tbody>
-            </table>
 
             <br/>
             
             <Form title="Formulario" action="#" name="formulario" 
             classButton="div-enviar" nameButton="Agregar" >
             <MobileForm>
-            <Input title="Numero de Operacion" id="numero_de_operacion" placeholder="Ingresar" required="required" />
-            <Input title="Numero de Producto" id="codigo_de_producto" placeholder="Ingresar" required="required" />
-            <Input title="Materia Prima" id="materia_prima" placeholder="Ingresar" />
-            <Input title="Numero de Inyectorra" id="numero_de_inyectora" placeholder="Ingresar" required="required" />
-            <Input title="Numero de Molde" id="numero_de_molde" placeholder="Ingresar" required="required" />
-            <Input title="Tiempo de ciclo" id="tiempo_de_ciclo" placeholder="Ingresar" required="required" />
-            <Input title="T. de ciclo optimo" id="" placeholder="Ingresar" required="required" />
-            <Input title="T. de inyección" id="" placeholder="Ingresar" required="required" />
-            <Input title="T. de extrusor" id="" placeholder="Ingresar" required="required" />
-            <Input title="T. de enfriamiento" id="" placeholder="Ingresar" required="required" />
-            <Input title="Cojin" id="" placeholder="Ingresar" required="required" />
-            <Input title="Pico de preción" id="" placeholder="Ingresar" required="required" />
-            <Input title="Punto de transferencia" id="" placeholder="Ingresar" required="required" />
-            <Input title="Fuerza de cierre" id="" placeholder="Ingresar" required="required" />
-            <Input title="Tamaño dosificado" id="" placeholder="Ingresar" required="required" />
-            <Input title="Contrapresión" id="" placeholder="Ingresar" required="required" />
-            <Input title="Presión de enpaque" id="" placeholder="Ingresar" required="required" />
-            <Input title="Tiempo de retención" id="" placeholder="Ingresar" required="required" />
-            <Input title="T. de expulsion" id="" placeholder="Ingresar" required="required" />
+            <div className="div-block">
+                <Input title="Numero de operación" id="numero_de_operacion" placeholder="Ingresar" required="required" />
+                <Input title="Numero de pproducto" id="codigo_de_producto" placeholder="Ingresar" required="required" />
+                <Input title="Numero de inyectora" id="numero_de_inyectora" placeholder="Ingresar" required="required" />
+                <Input title="Numero de molde" id="numero_de_molde" placeholder="Ingresar" required="required" />
+                <Input title="Tiempo de ciclo" id="tiempo_de_ciclo" placeholder="Ingresar" required="required" />
+                <Input5 title="Materia prima" id1="materia_prima" placeholder="Ingresar" />
+            </div>
+            <div className="div-block">
+                <Input title="Aditivo" id="aditivo" placeholder="Ingresar" required="required" />
+                <Input title="Registrado por" id="registrado_por" placeholder="Ingresar" required="required" />
+                <Input title="Pico de inyectora" id="pico_de_inyectora" placeholder="Ingresar" required="required" />
+                <Input title="Microgel 0" id="microgel_0" placeholder="Ingresar" required="required" />
+                <Input title="Microgel 1" id="microgel_1" placeholder="Ingresar" required="required" />
+                <Input title="Recoplas" id="regoplas" placeholder="Ingresar" required="required" />
+                <Input title="Robot" id="robot" placeholder="Ingresar" required="required" />
+                <Input title="Otro" id="otro" placeholder="Ingresar" required="required" />
+                <Input title="Temp. plato fijo" id="temp_plato_fijo" placeholder="Ingresar" required="required" />
+                <Input title="Temp. plato movil" id="temp_plato_movil" placeholder="Ingresar" required="required" />
+                <Input title="Temp. masa fundida" id="temp_masa_fundida" placeholder="Ingresar" required="required" />
+                <Input title="Tablero colada caliente" id="tablero_colada_caliente" placeholder="Ingresar" required="required" />
+                <Input title="Temp. de horno" id="temp_horno" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. de ciclo optimo" id="tpo_ciclo_optimo" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. ciclo actual" id="tpo_ciclo_actual" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. de inyección" id="tpo_inyeccion" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. de extrusor" id="tpo_extrusor" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. de enfriamiento" id="tpo_enfriamiento" placeholder="Ingresar" required="required" />
+                <Input title="Cojin" id="cojin" placeholder="Ingresar" required="required" />
+                <Input title="Pico de preción" id="pico_presion" placeholder="Ingresar" required="required" />
+                <Input title="Punto de transf." id="punto_transferencia" placeholder="Ingresar" required="required" />
+                <Input title="Fuerza de cierre" id="fuerza_cierre" placeholder="Ingresar" required="required" />
+                <Input title="Tamaño dosificado" id="tamano_dosific" placeholder="Ingresar" required="required" />
+                <Input title="Contrapresión" id="contrapresion" placeholder="Ingresar" required="required" />
+                <Input title="Precion de empaque" id="presion_empaque" placeholder="Ingresar" required="required" />
+                <Input title="Tpo. de retención" id="tpo_retencion" placeholder="Ingresar" required="required" />
+                <Input title="Tipo de expulsion" id="tipo_expulsion" placeholder="Ingresar" required="required" />
+                <Input title="Cavidades actualmente habilitadas" id="cavidades" placeholder="Ingresar" required="required" />
+                <Input title="Observaciones" id="observaciones" placeholder="Ingresar" required="required" />
+            </div>
             {/* <Select title="Materia Prima" >
             <option value="op1">Estandar</option>
             <option value="op2">Boq. Cobre</option>

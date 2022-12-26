@@ -8,11 +8,12 @@
 
 .div-fecha{
     display: flex;
-    background-color: var(--color-azul-fuerte);
+    background-color: var(--color-azul);
     width: 100%;
     height: 5em;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .table-cls{
@@ -43,4 +44,9 @@ tr:nth-child(even){
 tr:hover td{
 	background-color: var(--color-azul);
 	color: white;
+}
+
+.marginx10{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

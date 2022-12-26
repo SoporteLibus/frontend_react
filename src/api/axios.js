@@ -7,7 +7,7 @@ export const api = axios.create({
 const getPosts = async () => {
     const response = await api.get('/items',{
         headers:{
-            'Authorization':await localStorage.getItem('token')
+            'Authorization': await localStorage.getItem('token')
         }
     })
     

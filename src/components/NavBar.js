@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useRef, useState } from 'react';
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 // Componente del boton del NavBar
 export const MobileIcon = styled.button`
   display: none;
