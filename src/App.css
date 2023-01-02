@@ -126,7 +126,7 @@ footer{
   background-color: var(--color-blanco-solido);
   width: 100%;
   bottom: 0;
-  left: 0;
+  right: 0;
   height: 74px;
 }
 

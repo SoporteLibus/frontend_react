@@ -3,10 +3,10 @@ import { useState, useEffect } from "react"
 import getPosts from '../api/axios';
 import '../styles/search.css'
 import SearchBar from '../components/SearchBar'
-import Form from '../lib/Form'
 import Input from '../lib/Input';
 import Input5 from '../lib/Input5';
 import FormSection from "../lib/FormSection";
+import { skeletonListPage } from "../config/global/skeleton";
 
 const ListPage = () => {
     const [posts, setPosts] = useState([])
@@ -23,9 +23,9 @@ const ListPage = () => {
 
     const results = searchResults && searchResults.map(post => <Post key={post._id} post={post}/>);
 
-   const cargarElementos = async ()=>{
+    const cargarElementos = async ()=>{
 
-   try{
+    try{
     let Myelement1 = await document.forms['formulario']['numero_de_operacion']
     Myelement1.setAttribute('value', searchResults[0].numero_de_operacion);
 
@@ -43,15 +43,13 @@ const ListPage = () => {
 
     var Myelement6 = await document.forms['formulario'][`materia_prima`]
     Myelement6.setAttribute('value', searchResults[0].materia_prima)
-   }catch(e){}
-    
+    } catch (e){console.log(e)}
         
-     }
+    }
 
+    cargarElementos()
 
-cargarElementos()
-
-if (loading) return <h1>LOADING...</h1>
+    if (loading) return skeletonListPage()
     return (
         <div className="main-container">
             <div className="div-fecha">

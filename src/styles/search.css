@@ -28,13 +28,16 @@
 }
 
 th, td{
-	padding: 2em;
+	padding: 1em;
     text-align: center;
 }
 
 thead{
+    background-color: var(--color-azul);
 	color: white;
     border-bottom: 1px solid var(--color-gris-fuerte);
+    position: sticky;
+    top: 76px;
 }
 
 tr:nth-child(even){
