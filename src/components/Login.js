@@ -35,22 +35,24 @@ export default function Login(){
         }
     }
     return (
-        <div className="login-box">
-            <img src="/images/logo2.png" className="avatar" alt="Avatar" />
-            <h1>Login</h1>
-            <form onSubmit={Auth}>
-                <div>
-                    <label>Usuario</label>
-                    <input type="text" placeholder="Ingresar Usuario" value={email} onChange={(e) => setEmail(e.target.value)} required /> 
-                </div>
-                <label>Contraseña</label>
-               
-                <input type="password" placeholder="Ingresar Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                <div className="login-google">
-                    <button type="submit"><label>Ingresar con</label><FcGoogle /></button>
-                </div>
-                <input type="submit" value="Entrar" />
-            </form>
+        <div className='div-global'>
+            <div className="login-box">
+                <img src="/images/logo2.png" className="avatar" alt="Avatar" />
+                <h1>Login</h1>
+                <form onSubmit={Auth}>
+                    <div>
+                        <label>Usuario</label>
+                        <input type="text" placeholder="Ingresar Usuario" value={email} onChange={(e) => setEmail(e.target.value)} required /> 
+                    </div>
+                    <label>Contraseña</label>
+                
+                    <input type="password" placeholder="Ingresar Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <div className="login-google">
+                        <button type="submit"><label>Ingresar con</label><FcGoogle /></button>
+                    </div>
+                    <input type="submit" value="Entrar" />
+                </form>
+            </div>
         </div>
     )
 }
